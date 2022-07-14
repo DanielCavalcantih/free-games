@@ -1,0 +1,90 @@
+.game-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.card-game {
+  background-color: rgb(58, 0, 58);
+  color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+  width: 260px;
+  height: 220px;
+  margin: 15px;
+}
+
+.game-img {
+  border: solid 2px black;
+  border-width: 0 0 2px 0;
+  border-radius: 7px 7px 0 0;
+}
+
+.name-genre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.game-title {
+  margin: 0;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 180px;
+}
+
+.game-genre {
+  margin: 0;
+  font-size: 13px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  border: solid 3px green;
+  vertical-align: bottom;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  bottom: 10px;
+  width: 20px;
+  height: 20px;
+  border-top: solid 3px green;
+  border-left: solid 3px green;
+  border-right: solid 3px green;
+  border-bottom: solid 3px green;
+  background-color: green;
+  opacity: 0.7;
+}

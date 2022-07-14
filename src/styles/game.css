@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-img {
+  display: flex;
+  height: 281px;
+}
+
+.btnNext {
+  background: linear-gradient(to right, rgb(179, 179, 179) 1%, white 99%);
+  opacity: 0.5;
+  height: 281px;
+  width: 35px;
+  border: none;
+  transition: 300ms;
+}
+
+.btnNext:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btnPrev {
+  background: linear-gradient(to left, rgb(179, 179, 179) 1%, white 99%);
+  opacity: 0.5;
+  height: 281px;
+  width: 35px;
+  border: none;
+  transition: 300ms;
+}
+
+.btnPrev:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.description {
+  max-width: 400px;
+}
