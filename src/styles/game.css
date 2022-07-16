@@ -1,6 +1,27 @@
+.container-game {
+  color: white;
+}
+
+.name-game {
+  font-family: SUPERNINTENDO;
+  font-size: 60px;
+  text-align: center;
+  border: solid 5px white;
+  color: white;
+  text-shadow: 5px 5px 5px black;
+  border-width: 5px 0 5px 0;
+  box-shadow: 0 0 10px 5px black;
+  padding-top: 15px;
+  margin-top: 20px;
+  background-image: url('https://www.coliseugeek.com.br/wp-content/uploads/2021/06/thumb-1920-1099436.png');
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
+  height: 281px;
 }
 
 .container-img {
@@ -9,7 +30,8 @@
 }
 
 .btnNext {
-  background: linear-gradient(to right, rgb(179, 179, 179) 1%, white 99%);
+  background: linear-gradient(to right, black 1%, #440344 99%);
+  color: white;
   opacity: 0.5;
   height: 281px;
   width: 35px;
@@ -19,11 +41,12 @@
 
 .btnNext:hover {
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .btnPrev {
-  background: linear-gradient(to left, rgb(179, 179, 179) 1%, white 99%);
+  background: linear-gradient(to left, black 1%, #440344 99%);
+  color: white;
   opacity: 0.5;
   height: 281px;
   width: 35px;
@@ -33,9 +56,45 @@
 
 .btnPrev:hover {
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .description {
   max-width: 400px;
+  background-color: #360136;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.description h3 {
+  margin-left: 10px;
+}
+
+.description-text {
+  background-color: #2b002b;
+  border: solid 2px green;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.description-text p {
+  margin: 0;
+}
+
+.genre-rele-dev {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.genre-rele-dev h3 {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.genre-rele-dev p {
+  margin: 0;
+  font-size: 15px;
 }

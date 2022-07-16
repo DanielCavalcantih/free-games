@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import FavoriteGames from './pages/FavoriteGames';
 import Game from './pages/Game';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route exact path="/home" component={ Home } />
       <Route exact path="/favorites" component={ FavoriteGames } />
       <Route exact path="/game/:id" component={ Game } />
+      <Route exact path="/profile" component={ Profile } />
     </Switch>
   );
 }

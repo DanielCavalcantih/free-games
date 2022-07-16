@@ -14,7 +14,6 @@ function Game() {
     const getResponse = async () => {
       const response = await fetchSpecificGame(id);
       const { graphics, memory, os, processor, storage } = response.minimum_system_requirements;
-      console.log(response);
       setGame(response);
       setImages(response.screenshots)
       setGameRequirements({ graphics, memory, os, processor, storage })
@@ -24,8 +23,8 @@ function Game() {
   }, [])
 
   return (
-    <div>
-      <h1>{ game.title }</h1>
+    <div className="container-game">
+      <h1 className="name-game">{ game.title }</h1>
       <div className="container">
         <div className="container-img">
           <button className="btnPrev" type="button" onClick={ () => {
@@ -45,10 +44,22 @@ function Game() {
           } }>❯</button>
         </div>
         <div className="description">
-          <p>{ game.short_description }</p>
-          <p>{ game.genre }</p>
-          <p>{ game.release_date }</p>
-          <p>{ game.developer }</p>
+          <h3>Description</h3>
+          <div className="description-text">
+            <p>{ game.short_description }</p>
+          </div>
+          <div className="genre-rele-dev">
+            <h3>Genre: </h3>
+            <p>{ game.genre }</p>
+          </div>
+          <div className="genre-rele-dev">
+            <h3>Released: </h3>
+            <p>{ game.release_date }</p>
+          </div>
+          <div className="genre-rele-dev">
+            <h3>Developer: </h3>
+            <p>{ game.developer }</p>
+          </div>
         </div>
       </div>
       <div>

@@ -1,11 +1,14 @@
 import { useContext, useState } from 'react';
 import Context from '../context/freeGameContext';
+import '../styles/login.css';
+import logo from '../images/ffgames.png';
 
 function Login({ history }) {
   const [state, setState] = useState({ user: '', email: '', password: '' })
   const { addUser } = useContext(Context)
 
-  const handleClick = () => {
+  const handleClick = e => {
+    e.preventDefault();
     addUser(state.user, state.email);
     localStorage.setItem('infoUser', JSON.stringify({
       userName: state.user,
@@ -20,21 +23,25 @@ function Login({ history }) {
   }
 
   return (
-    <form>
-      <label htmlFor="user">
-        User:
-        <input type="text" onChange={ handleChange } value={ state.name } name="user" id="user" />
-      </label>
-      <label htmlFor="email">
-        Email:
-        <input type="email" onChange={ handleChange } value={ state.email } name="email" id="email" />
-      </label>
-      <label htmlFor="password">
-        Password:
-        <input type="password" onChange={ handleChange } name="password" id="password" />
-      </label>
-      <button disabled={ !(state.email && state.password && state.user) } type="button" onClick={ handleClick }>Login</button>
-    </form>
+    <main>
+      <header>
+        <img className="logo" src={ logo } alt="ffgames" />
+      </header>
+      <div className="div-login">
+        <form className="form-login">
+          <label htmlFor="user">
+            <input className="input-login" placeholder="Username" type="text" onChange={ handleChange } value={ state.name } name="user" id="user" />
+          </label>
+          <label htmlFor="email">
+            <input className="input-login" placeholder="Email" type="email" onChange={ handleChange } value={ state.email } name="email" id="email" />
+          </label>
+          <label htmlFor="password">
+            <input className="input-login" placeholder="Password" type="password" onChange={ handleChange } name="password" id="password" />
+          </label>
+          <button className="button-login" disabled={ !(state.email && state.password && state.user) } type="submit" onClick={ handleClick }>Login</button>
+        </form>
+      </div>
+    </main>
   )
 }
 

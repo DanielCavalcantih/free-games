@@ -14,7 +14,7 @@ function GameCard({ title, img, category, cardType, gameId }) {
   return (
     <div className="card-game">
       <Link className="link" to={`/game/${gameId}`}>
-        <img className="game-img" width="260" src={ img } alt="gameImage" />
+        <img className="game-img" src={ img } alt="gameImage" />
       </Link>
       <div className="name-genre">
         <div>

@@ -5,14 +5,17 @@ import { fetchFreeGames } from "../services/fetchApi";
 function FreeGameProvider({ children }) {
   const [state, setState] = useState({ userName: '', userEmail: ''});
   const [gamesList, setGamesList] = useState([]);
+  const [newGameList, setNewGameList] = useState([]);
   const [favoriteGames, setFavoriteGames] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedFavCategory, setSelectedFavCategory] = useState('All');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
     const getGames = async () => {
       const allGames = await fetchFreeGames()
       setGamesList(allGames);
+      setNewGameList(allGames);
     };
 
     getGames();
@@ -27,9 +30,13 @@ function FreeGameProvider({ children }) {
     userEmail: state.userEmail,
     gamesList,
     setGamesList,
+    newGameList,
+    setNewGameList,
     addUser,
     selectedCategory,
     setSelectedCategory,
+    selectedFavCategory,
+    setSelectedFavCategory,
     search,
     setSearch,
     favoriteGames,

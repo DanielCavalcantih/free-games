@@ -1,0 +1,69 @@
+.container-category-email {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  background-color: rgb(46, 0, 46);
+  width: 120px;
+  margin-top: 80px;
+  opacity: 0.9;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.651);
+  margin-bottom: 50px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: solid 1px rgba(255, 255, 255, 0.233);
+  border-width: 0 0 1px 0;
+  font-size: 13px;
+  padding: 3px 0 3px 10px;
+  transition: 200ms;
+}
+
+.category:first-child {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.category:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.103);
+}
+
+.category input {
+  display: none;
+}
+
+.user-email {
+  font-size: 13px;
+}
+
+.link-profile {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 128, 0, 0.822);
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+  padding: 5px;
+  width: 80px;
+  border-radius: 10px;
+  transition: 300ms;
+}
+
+.link-profile:hover {
+  background-color: green;
+}
+
+.link-profile span {
+  margin-left: 5px;
+}
+
