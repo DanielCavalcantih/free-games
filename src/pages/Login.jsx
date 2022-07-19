@@ -22,6 +22,11 @@ function Login({ history }) {
     setState({ ...state, [target.name]: value })
   }
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
   return (
     <main>
       <header>
@@ -38,7 +43,7 @@ function Login({ history }) {
           <label htmlFor="password">
             <input className="input-login" placeholder="Password" type="password" onChange={ handleChange } name="password" id="password" />
           </label>
-          <button className="button-login" disabled={ !(state.email && state.password && state.user) } type="submit" onClick={ handleClick }>Login</button>
+          <button className="button-login" disabled={ !(validateEmail(state.email) && state.password.length >= 8 && state.user) } type="submit" onClick={ handleClick }>Login</button>
         </form>
       </div>
     </main>

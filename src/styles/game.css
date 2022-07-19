@@ -1,39 +1,107 @@
-.container-game {
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.container-duck {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.name-game {
-  font-family: SUPERNINTENDO;
-  font-size: 60px;
-  text-align: center;
-  border: solid 5px white;
+.loading-duck {
+  width: 200px;
+}
+
+.container-game {
   color: white;
-  text-shadow: 5px 5px 5px black;
-  border-width: 5px 0 5px 0;
-  box-shadow: 0 0 10px 5px black;
-  padding-top: 15px;
-  margin-top: 20px;
-  background-image: url('https://www.coliseugeek.com.br/wp-content/uploads/2021/06/thumb-1920-1099436.png');
-  background-position: center;
-  background-size: cover;
+  padding-top: 130px;
 }
 
 .container {
   display: flex;
-  justify-content: space-around;
-  height: 281px;
+  justify-content: center;
 }
 
-.container-img {
+.container-img-table {
   display: flex;
-  height: 281px;
+  flex-direction: column;
+  align-items: center;
+  height: 337.5px;
+  margin-right: 20px;
 }
+
+.container-img-table h2 {
+  text-align: center;
+}
+
+.img-buttons {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.play-game {
+  padding: 15px;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: green;
+  border: solid 3px white;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 0 0 20px 1px rgb(44, 44, 44);
+  transition: 300ms;
+  text-decoration: none;
+}
+
+.play-game:hover {
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.541);
+  transform: scale(1.07);
+  z-index: 2;
+  cursor: pointer;
+}
+
+table {
+  border-spacing: 0;
+  margin-bottom: 50px;
+  background-color: #2b002b;
+  border-radius: 10px;
+}
+
+.th-graphics {
+  border-radius: 10px 0 0 0;
+}
+
+.td-graphics {
+  border-radius: 0 10px 0 0;
+}
+
+.th-storage {
+  border-radius: 0 0 0 10px;
+  border-width: 3px 0 3px 3px;
+}
+
+.td-storage {
+  border-radius: 0 0 10px 0;
+  border-width: 3px;
+}
+
+th {
+  text-align: start;
+  border: solid 3px black;
+  border-width: 3px 0 0 3px;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  border: solid 3px black;
+  border-width: 3px 3px 0 3px;
+}
+
 
 .btnNext {
   background: linear-gradient(to right, black 1%, #440344 99%);
   color: white;
   opacity: 0.5;
-  height: 281px;
   width: 35px;
   border: none;
   transition: 300ms;
@@ -41,14 +109,13 @@
 
 .btnNext:hover {
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .btnPrev {
   background: linear-gradient(to left, black 1%, #440344 99%);
   color: white;
   opacity: 0.5;
-  height: 281px;
   width: 35px;
   border: none;
   transition: 300ms;
@@ -56,14 +123,20 @@
 
 .btnPrev:hover {
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .description {
-  max-width: 400px;
+  max-width: 300px;
   background-color: #360136;
   border-radius: 10px;
   padding: 15px;
+  margin-left: 50px;
+}
+
+.img-thumb {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .description h3 {
@@ -72,7 +145,7 @@
 
 .description-text {
   background-color: #2b002b;
-  border: solid 2px green;
+  border: solid 2px white;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;

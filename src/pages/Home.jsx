@@ -10,7 +10,7 @@ function Home({ history }) {
 
   return (
     <div>
-      <Header history={ history } />
+      <Header location="home" history={ history } />
       <CategoryList listType="homeList" />
       <div className="container-category-cards">
         <ul className="game-list">
