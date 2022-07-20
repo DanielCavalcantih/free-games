@@ -29,7 +29,7 @@ function CategoryList({ listType }) {
       <div>
         <Link className="link-profile" to="/profile">
           <img width="20" src="https://cdn-icons-png.flaticon.com/512/1361/1361728.png" alt="" />
-          <span>{ user.userName }</span>
+          <span className="user-name">{ user.userName }</span>
         </Link>
       </div>
     </div>
