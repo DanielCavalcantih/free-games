@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import Context from "../context/freeGameContext";
 
 function GameCard({ title, img, category, cardType, gameId }) {
-  const { favoriteGames, setFavoriteGames, gamesList } = useContext(Context);
-
-  const handleChange = ({ target }) => {
-    target.checked
-      ? setFavoriteGames([...favoriteGames, gamesList.find((game) => game.title === target.name)])
-      : setFavoriteGames(favoriteGames.filter((game) => game.title !== target.name))
-  }
+  const { handleChangeFavorite } = useContext(Context);
 
   return (
     <div className="card-game">
@@ -25,12 +19,12 @@ function GameCard({ title, img, category, cardType, gameId }) {
           cardType === 'normal'
             ? (
               <div className="check-input">
-                <input name={ title } onChange={ handleChange } id={ title } type="checkbox" />
+                <input name={ title } onChange={ handleChangeFavorite } id={ title } type="checkbox" />
                 <label htmlFor={ title }></label>
               </div>
             ) : (
               <div className="check-input">
-                <input name={ title } onChange={ handleChange } checked id={ title } type="checkbox" />
+                <input name={ title } onChange={ handleChangeFavorite } checked id={ title } type="checkbox" />
                 <label htmlFor={ title }></label>
               </div>
             )
