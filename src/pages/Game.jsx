@@ -39,7 +39,7 @@ function Game() {
                     <div className="img-buttons">
                       <button className="btnPrev" type="button" onClick={ () => {
                         if (indexImage === 0) {
-                          setIndexImage(2)
+                          setIndexImage(images.length - 1)
                         } else {
                           setIndexImage(indexImage - 1);
                         }
@@ -56,8 +56,10 @@ function Game() {
                     <a href={`${url}`} className="play-game">
                       Play { game.title }
                     </a>
+                    <h2 className="full-description-h2">Description</h2>
+                    <p className="full-description">{ game.description }</p>
                     <div>
-                      <h2>Minimum System Requirements</h2>
+                      <h2 className="msr-h2">Minimum System Requirements</h2>
                       <table>
                         <thead>
                           <tr>

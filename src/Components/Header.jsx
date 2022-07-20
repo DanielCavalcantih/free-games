@@ -2,11 +2,10 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Context from "../context/freeGameContext";
 import '../styles/header.css'
+import logo from '../images/ffgamesBranco.png';
 
 function Header({ location }) {
-  const { search, setSearch, gamesList, setNewGameList } = useContext(Context);
-
-  const user = JSON.parse(localStorage.getItem('infoUser'));
+  const { search, setSearch, gamesList, setNewGameList, favoriteGames } = useContext(Context);
 
   const handleClick = e => {
     e.preventDefault();
@@ -18,19 +17,17 @@ function Header({ location }) {
 
   return (
     <header className="header">
-      <h1 className="header-title">
-        <Link className="link-home" to="/home">
-          Hello, { user.userName }
-        </Link>
-      </h1>
+      <Link to="/home">
+        <img className="link-home" width="130px" src={ logo } alt="" />
+      </Link>
       <form>
         {
           location === 'home'
             ? (
-              <div>
+              <div className="container-input-button">
                 <input className="input-search" placeholder="Look for a game" id="searchGame" value={ search } type="text" onChange={ ({ target }) => setSearch(target.value) } />
                 <button className="btn-search" type="submit" onClick={ handleClick }>
-                  <img width="12" src="https://emoji-uc.akamaized.net/orig/36/42dfd89cc30f82fc76ebe7fd1ef1fb.png" alt="" />
+                  <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
                 </button>
               </div>
             )
@@ -38,7 +35,11 @@ function Header({ location }) {
         }
       </form>
       <div>
-        <Link to="/favorites" className="link-favorites" type="button"><p>Favorites</p><img width="25" src="https://www.lojasestrelaonline.com.br/media/catalog/category/novidades.png" alt="" /></Link>
+        <Link to="/favorites" className="link-favorites" type="button">
+          <p>Favorites</p>
+          <span hidden={ !favoriteGames.length > 0 }>({ favoriteGames.length })</span>
+          <img width="25" src="https://www.lojasestrelaonline.com.br/media/catalog/category/novidades.png" alt="" />
+        </Link>
       </div>
     </header>
   )

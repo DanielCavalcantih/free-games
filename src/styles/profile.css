@@ -1,0 +1,17 @@
+.container-profile {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  color: white;
+}
+
+.profile {
+  position: absolute;
+  background-color: #360236;
+}
+
+.img-profile {
+  border-radius: 100%;
+  margin: 10px;
+}

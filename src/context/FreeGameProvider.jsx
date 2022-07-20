@@ -11,6 +11,12 @@ function FreeGameProvider({ children }) {
   const [selectedFavCategory, setSelectedFavCategory] = useState('All');
   const [search, setSearch] = useState('');
 
+  const handleChangeFavorite = ({ target }) => {
+    target.checked
+      ? setFavoriteGames([...favoriteGames, gamesList.find((game) => game.title === target.name)])
+      : setFavoriteGames(favoriteGames.filter((game) => game.title !== target.name))
+  }
+
   useEffect(() => {
     const getGames = async () => {
       const allGames = await fetchFreeGames()
@@ -41,6 +47,7 @@ function FreeGameProvider({ children }) {
     setSearch,
     favoriteGames,
     setFavoriteGames,
+    handleChangeFavorite,
   }
 
   return (

@@ -6,7 +6,7 @@
   height: 100vh;
   background-color: rgb(46, 0, 46);
   width: 120px;
-  margin-top: 80px;
+  margin-top: 90px;
   opacity: 0.9;
 }
 
@@ -54,9 +54,14 @@
   color: black;
   justify-content: center;
   padding: 5px;
-  width: 80px;
+  max-width: 80px;
   border-radius: 10px;
   transition: 300ms;
+}
+
+.user-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link-profile:hover {

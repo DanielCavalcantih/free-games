@@ -25,7 +25,7 @@ function FavoriteGames() {
                   <li key={ g.id }>
                     <GameCard gameId={ g.id } cardType="favorite" title={ g.title } img={ g.thumbnail } category={ g.genre } />
                   </li>)) )
-            : <span>No favorite games</span>
+            : <span className="no-favorites">No favorite games</span>
           }
         </ul>
       </div>

@@ -16,7 +16,7 @@ function Home({ history }) {
         <ul className="game-list">
           { gamesList && selectedCategory === 'All'
             ? newGameList.map(game => (
-              <li className="item-card" key={ game.id }>
+              <li key={ game.id }>
                 { favoriteGames.includes(game)
                   ? <GameCard gameId={ game.id } cardType="favorite" title={ game.title } img={ game.thumbnail } category={ game.genre } />
                   : <GameCard gameId={ game.id } cardType="normal" title={ game.title } img={ game.thumbnail } category={ game.genre } />
