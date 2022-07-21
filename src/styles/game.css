@@ -35,10 +35,39 @@
 
 .img-buttons {
   display: flex;
-  margin-bottom: 50px;
+}
+
+.container-div-all-img {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 20px 0 20px;
+  border-radius: 0 0 10px 10px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+.div-all-img {
+  display: flex;
+  align-items: center;
+  height: 110px;
+  margin: 5px;
+}
+
+.all-img {
+  transition: 300ms;
+  border-radius: 10px;
+}
+
+.selected-img {
+  border: solid 2px green;
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.541);
+  transform: scale(1.07);
+  z-index: 2;
 }
 
 .play-game {
+  margin-top: 50px;
   padding: 10px 13px 3px 10px;
   font-size: 40px;
   font-weight: normal;
@@ -152,6 +181,7 @@ td {
   border-radius: 10px;
   padding: 15px;
   margin-left: 50px;
+  box-shadow: 0px 0px 20px 1px black;
 }
 
 .img-thumb {
@@ -179,6 +209,7 @@ td {
   display: flex;
   align-items: center;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .genre-rele-dev h3 {

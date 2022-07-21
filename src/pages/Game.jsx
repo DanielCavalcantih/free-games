@@ -53,6 +53,15 @@ function Game() {
                         }
                       } }>❯</button>
                     </div>
+                    <div className="container-div-all-img">
+                      {
+                        images.map((img, i) => (
+                          img.image === images[indexImage].image
+                            ? <div className="div-all-img"><img className="all-img selected-img" width="130" key={ i } src={ img.image } alt="" /></div>
+                            : <div className="div-all-img"><img className="all-img" width="100" key={ i } src={ img.image } alt="" /></div>
+                        ))
+                      }
+                    </div>
                     <a href={`${url}`} className="play-game">
                       Play { game.title }
                     </a>
