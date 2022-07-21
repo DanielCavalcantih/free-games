@@ -2,10 +2,12 @@ import { useContext, useState } from 'react';
 import Context from '../context/freeGameContext';
 import '../styles/login.css';
 import logo from '../images/ffgames.png';
+import { useNavigate } from 'react-router-dom';
 
-function Login({ history }) {
-  const [state, setState] = useState({ user: '', email: '', password: '' })
-  const { addUser } = useContext(Context)
+function Login() {
+  const [state, setState] = useState({ user: '', email: '', password: '' });
+  const { addUser } = useContext(Context);
+  const history = useNavigate()
 
   const handleClick = e => {
     e.preventDefault();
@@ -14,7 +16,7 @@ function Login({ history }) {
       userName: state.user,
       userEmail: state.email,
     }))
-    history.push('/home');
+    history('/home');
   }
 
   const handleChange = ({ target }) => {
