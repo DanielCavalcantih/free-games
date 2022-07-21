@@ -16,15 +16,22 @@ function FavoriteGames() {
         <ul className="game-list">
           {favoriteGames.length
             ? ( favoriteGames && selectedFavCategory === 'All'
-              ? favoriteGames.map(game => (
-                <li className="item-card" key={ game.id }>
-                  <GameCard gameId={ game.id } cardType="favorite" title={ game.title } img={ game.thumbnail } category={ game.genre } />
-                </li>)
-              ) : favoriteGames.filter(game => game.genre === selectedFavCategory)
-                .map(g => (
-                  <li key={ g.id }>
-                    <GameCard gameId={ g.id } cardType="favorite" title={ g.title } img={ g.thumbnail } category={ g.genre } />
-                  </li>)) )
+              ? favoriteGames.map((game, i) => (
+                i <= 50
+                  ? (
+                    <li className="item-card" key={ game.id }>
+                      <GameCard gameId={ game.id } cardType="favorite" title={ game.title } img={ game.thumbnail } category={ game.genre } />
+                    </li>
+                  ) : null
+              )) : favoriteGames.filter(game => game.genre === selectedFavCategory)
+                .map((g, i) => (
+                  i <= 50
+                    ? (
+                      <li key={ g.id }>
+                        <GameCard gameId={ g.id } cardType="favorite" title={ g.title } img={ g.thumbnail } category={ g.genre } />
+                      </li>
+                    ) : null
+                )) )
             : <span className="no-favorites">No favorite games</span>
           }
         </ul>
