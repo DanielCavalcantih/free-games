@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import FavoriteGames from './pages/FavoriteGames';
 import Game from './pages/Game';
 import Profile from './pages/Profile';
+import ProfileEdit from './pages/ProfileEdit';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/favorites" element={ <FavoriteGames /> } />
       <Route exact path="/game/:id" element={ <Game /> } />
       <Route exact path="/profile" element={ <Profile /> } />
+      <Route exact path="/profile-edit" element={ <ProfileEdit /> } />
     </Routes>
   );
 }

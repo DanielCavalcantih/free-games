@@ -15,6 +15,8 @@ function Login() {
     localStorage.setItem('infoUser', JSON.stringify({
       userName: state.user,
       userEmail: state.email,
+      userNumber: 'No number',
+      profileImg: '',
     }))
     history('/home');
   }

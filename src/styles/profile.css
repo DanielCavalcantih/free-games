@@ -10,15 +10,9 @@
   height: 600px;
 }
 
-.welcome-profile h1 {
-  margin-left: 50px;
-  margin-top: 120px;
-  margin-bottom: 100px;
-}
-
 .container-profile {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height: 100vh;
   align-items: center;
   color: white;
@@ -27,12 +21,25 @@
 .my-account {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   background-color: #360236;
-  width: 60%;
-  height: 400px;
+  box-shadow: 0 0 30px 1px black;
+  padding: 30px;
   border-radius: 30px;
+  margin-right: 50px;
+}
+
+.h2-my-account {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 250px;
+  margin-top: 30px;
 }
 
 .account-info {
@@ -42,6 +49,7 @@
   width: 20%;
   height: 300px;
   border-radius: 30px;
+  margin-left: 50px;
 }
 
 .img-profile {
@@ -51,4 +59,52 @@
 
 .favorites-length {
   font-size: 20px;
+}
+
+.label-input {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.input-profile {
+  padding: 10px;
+  width: 300px;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #2B012B;
+  color: white;
+}
+
+.input-profile:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.phone-input {
+  margin-bottom: 120px;
+}
+
+.edit-profile {
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: green;
+  box-shadow: 0 0 5px 1px;
+  transition: 300ms;
+  width: 100%;
+}
+
+.link-edit {
+  text-decoration: none;
+  color: black;
+}
+
+.edit-profile:hover {
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 10px 1px;
+  transform: scale(1.04);
 }

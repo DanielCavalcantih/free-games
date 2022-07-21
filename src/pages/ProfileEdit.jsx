@@ -1,7 +1,7 @@
 import Header from '../Components/Header';
 import ProfileCard from '../Components/ProfileCard';
 
-function Profile() {
+function ProfileEdit() {
   return (
     <div>
       <Header />
@@ -10,4 +10,4 @@ function Profile() {
   )
 }
 
-export default Profile;
+export default ProfileEdit;
