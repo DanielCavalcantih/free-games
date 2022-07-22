@@ -92,4 +92,12 @@ main {
     width: 70%;
     margin: 0;
   }
+
+  .input-login {
+    width: 80%;
+  }
+
+  .button-login {
+    width: 80%;
+  }
 }
