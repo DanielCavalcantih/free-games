@@ -1,17 +1,18 @@
 main {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  background-image: url('https://i.imgur.com/2gfwG.png');
+  background-image: url('https://wallpapercave.com/wp/wp2757868.gif');
   background-position: bottom;
   background-size: cover;
 }
 
 .logo {
-  width: 450px;
-  margin-bottom: 100px;
-  margin-right: 100px;
+  width: 350px;
+  margin-left: 250px;
+  margin-bottom: 50px;
 }
 
 .div-login {
@@ -20,8 +21,9 @@ main {
   align-items: center;
   background-color: rgb(54, 0, 54);
   padding: 30px;
+  margin-left: 230px;
   border-radius: 10px;
-  margin-left: 100px;
+  margin-bottom: 30px;
 }
 
 .form-login {
@@ -68,42 +70,3 @@ main {
   background-color: rgba(0, 128, 0, 0.527);
 }
 
-
-@media only screen and (max-width: 900px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-    max-height: 100vh;
-    max-width: 100vw;
-  }
-
-  main header {
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo {
-    width: 50%;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .div-login {
-    width: 70%;
-    margin: 0;
-  }
-
-  .form-login {
-    width: 100%;
-  }
-
-  .input-login {
-    width: 90%;
-    font-size: 15px;
-  }
-
-  .button-login {
-    width: 90%;
-    font-size: 18px;
-  }
-}
