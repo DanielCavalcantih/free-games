@@ -72,3 +72,38 @@
   margin-left: 5px;
 }
 
+@media only screen and (max-width: 900px) {
+  .container-category-email {
+    margin-top: 70px;
+    height: 25px;
+    width: 100vw;
+    padding-bottom: 10px;
+    z-index: 1;
+  }
+
+  .category-container {
+    flex-direction: column;
+  }
+
+  .button-categories {
+    border: none;
+    background-color: rgb(46, 0, 46);
+  }
+
+  .all-categories {
+    background-color: rgb(46, 0, 46);
+    width: 100vw;
+    height: 100vh;
+    margin-top: 5px;
+  }
+
+  .category {
+    font-size: 18px;
+    justify-content: center;
+    padding: 5px 0;
+  }
+
+  .category:first-child {
+    font-size: 20px;
+  }
+}

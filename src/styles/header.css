@@ -61,3 +61,36 @@
 .link-favorites:hover {
   color: green;
 }
+
+@media only screen and (max-width: 900px) {
+  .header {
+    position: fixed;
+    height: 70px;
+  }
+
+  .link-home {
+    width: 100px;
+  }
+
+  .just-FF {
+    margin-left: 10px;
+  }
+
+  .input-search {
+    width: 120px;
+    padding: 10px 10px 10px 15px;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  .link-favorites {
+    width: 10%;
+    margin-right: 0;
+    font-size: 15px;
+  }
+
+  .link-profile {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}

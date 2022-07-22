@@ -10,7 +10,7 @@ function FavoriteGames() {
 
   return (
     <div>
-      <Header />
+      <Header location="favorites" />
       <CategoryList listType="favoriteList" />
       <div className="container-category-cards">
         <ul className="game-list">

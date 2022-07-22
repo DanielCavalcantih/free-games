@@ -70,3 +70,42 @@ main {
   background-color: rgba(0, 128, 0, 0.527);
 }
 
+@media only screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    max-width: 100vw;
+    background-position: right;
+  }
+
+  main header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 50%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .div-login {
+    width: 70%;
+    margin: 0;
+  }
+
+  .form-login {
+    width: 100%;
+  }
+
+  .input-login {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .button-login {
+    width: 90%;
+    font-size: 18px;
+  }
+}
