@@ -93,8 +93,12 @@ main {
     margin: 0;
   }
 
+  .form-login {
+    width: 100%;
+  }
+
   .input-login {
-    width: 80%;
+    width: 90%;
   }
 
   .button-login {
