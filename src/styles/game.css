@@ -300,6 +300,13 @@ td {
     width: 80px;
   }
 
+  .play-game:hover {
+    box-shadow: 0 0 20px 1px rgb(44, 44, 44);
+    transform: none;
+    z-index: 2;
+    cursor: pointer;
+  }
+
   .full-description {
     width: 85%;
     font-size: 15px;

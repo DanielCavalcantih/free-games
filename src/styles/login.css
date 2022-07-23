@@ -59,6 +59,7 @@ main {
   border-radius: 10px;
   background-color: green;
   transition: 300ms;
+  color: white;
 }
 
 .button-login:hover {
@@ -93,6 +94,8 @@ main {
   .div-login {
     width: 70%;
     margin: 0;
+    transform: scale(0.9);
+    margin-bottom:100px;
   }
 
   .form-login {

@@ -68,6 +68,7 @@
     position: fixed;
     height: 70px;
     opacity: 0.95;
+    z-index: 3;
   }
 
   .link-home {
