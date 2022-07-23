@@ -6,15 +6,21 @@ import logo from '../images/ffgamesBranco.png';
 import logoFF from '../images/justFF.png';
 
 function Header({ location }) {
-  const { search, setSearch, gamesList, setNewGameList, favoriteGames } = useContext(Context);
+  const { search, setSearch, gamesList, setNewGameList,defaultGameList, favoriteGames, setSelectedCategory } = useContext(Context);
   const sizeWidthScreen = global.screen.width;
 
   const handleClick = e => {
     e.preventDefault();
+    const newArray = [...gamesList]
     search.length > 0
-      ? setNewGameList(gamesList.filter((game) => game.title.toLowerCase().includes(search.toLocaleLowerCase())))
+      ? setNewGameList(newArray.filter((game) => game.title.toLowerCase().includes(search.toLocaleLowerCase())))
       : setNewGameList(gamesList)
     setSearch('')
+  }
+
+  const handleClickLogo = () => {
+    setNewGameList(defaultGameList);
+    setSelectedCategory('All');
   }
 
   return (
@@ -22,8 +28,8 @@ function Header({ location }) {
       <Link to="/home">
         {
           sizeWidthScreen > 500
-           ? <img className="link-home" width="130px" src={ logo } alt="" />
-           : <img className="just-FF" width="40" src={ logoFF } alt="" />
+           ? <img onClick={ handleClickLogo } className="link-home" width="130px" src={ logo } alt="" />
+           : <img onClick={ handleClickLogo } className="just-FF" width="40" src={ logoFF } alt="" />
         }
       </Link>
       <form>
@@ -32,14 +38,9 @@ function Header({ location }) {
             ? (
               <div className="container-input-button">
                 <input className="input-search" placeholder="Look for a game" id="searchGame" value={ search } type="text" onChange={ ({ target }) => setSearch(target.value) } />
-                {
-                  sizeWidthScreen > 500
-                    ? (
-                      <button className="btn-search" type="submit" onClick={ handleClick }>
-                        <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
-                      </button>
-                    ) : null
-                }
+                <button className="btn-search" type="submit" onClick={ handleClick }>
+                  <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
+                </button>
               </div>
             )
             : <div></div>

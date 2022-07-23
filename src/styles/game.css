@@ -59,6 +59,10 @@
   border-radius: 10px;
 }
 
+.all-img:hover {
+  cursor: pointer;
+}
+
 .selected-img {
   border: solid 2px green;
   box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.541);
@@ -221,4 +225,95 @@ td {
 .genre-rele-dev p {
   margin: 0;
   font-size: 15px;
+}
+
+@media only screen and (max-width: 900px) {
+  .loading-duck {
+    width: 100px;
+  }
+
+  .container-game {
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    margin-left: 0;
+    order: 1;
+    margin-bottom: 50px;
+    transform: scale(0.9);
+  }
+
+  .container-img-table {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .container-img-table img {
+    width: 280px;
+    margin-bottom: 0;
+    border-radius: 10px;
+  }
+
+  .img-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-buttons {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btnPrev {
+    width: 50%;
+  }
+
+  .btnNext {
+    width: 50%;
+  }
+
+  .container-div-all-img {
+    width: 200px;
+    margin-right: 0;
+    margin-top: 10px;
+    background-color: #440344;
+  }
+
+  .div-all-img {
+    height: 60px;
+  }
+
+  .div-all-img img {
+    width: 80px;
+  }
+
+  .full-description {
+    width: 85%;
+    font-size: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  table {
+    transform: scale(0.8);
+  }
+
+  .msr-h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
 }

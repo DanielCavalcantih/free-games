@@ -113,6 +113,7 @@ input[type="checkbox"]:checked + label::after {
 
   .game-list {
     width: 100vw;
+    margin-top: 140px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

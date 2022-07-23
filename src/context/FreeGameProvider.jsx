@@ -9,6 +9,7 @@ function FreeGameProvider({ children }) {
   const [favoriteGames, setFavoriteGames] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedFavCategory, setSelectedFavCategory] = useState('All');
+  const [defaultGameList, setDefaultGameList] = useState([]);
   const [search, setSearch] = useState('');
 
   const handleChangeFavorite = ({ target }) => {
@@ -22,6 +23,7 @@ function FreeGameProvider({ children }) {
       const allGames = await fetchFreeGames()
       setGamesList(allGames);
       setNewGameList(allGames);
+      setDefaultGameList(allGames);
     };
 
     getGames();
@@ -48,6 +50,7 @@ function FreeGameProvider({ children }) {
     favoriteGames,
     setFavoriteGames,
     handleChangeFavorite,
+    defaultGameList,
   }
 
   return (

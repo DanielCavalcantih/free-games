@@ -64,6 +64,7 @@
 
 @media only screen and (max-width: 900px) {
   .header {
+    justify-content: space-between;
     position: fixed;
     height: 70px;
   }
@@ -76,10 +77,14 @@
     margin-left: 10px;
   }
 
+  .btn-search {
+    width: 40px;
+  }
+
   .input-search {
     width: 120px;
     padding: 10px 10px 10px 15px;
-    border-radius: 15px;
+    border-radius: 15px 0 0 15px;
     margin: 0;
   }
 

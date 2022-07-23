@@ -12,6 +12,7 @@ function Game() {
   const [indexImage, setIndexImage] = useState(0);
   const [gameRequirements, setGameRequirements] = useState({})
   const [url, setUrl] = useState('');
+  const sizeWidthScreen = global.screen.width;
 
   useEffect(() => {
     const getResponse = async () => {
@@ -26,6 +27,11 @@ function Game() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const handleClickImage = ({ target }) => {
+    const { id } = target;
+    setIndexImage(Number(id));
+  }
+
   return (
     <div>
       {
@@ -36,29 +42,54 @@ function Game() {
               <div className="container-game">
                 <div className="container">
                   <div className="container-img-table">
-                    <div className="img-buttons">
-                      <button className="btnPrev" type="button" onClick={ () => {
-                        if (indexImage === 0) {
-                          setIndexImage(images.length - 1)
-                        } else {
-                          setIndexImage(indexImage - 1);
-                        }
-                      } }>❮</button>
-                      { images.length && <img width="600" src={ images[indexImage].image } alt="" /> }
-                      <button className="btnNext" type="button" onClick={ () => {
-                        if (indexImage === images.length - 1) {
-                          setIndexImage(0)
-                        } else {
-                          setIndexImage(indexImage + 1);
-                        }
-                      } }>❯</button>
-                    </div>
+                    {
+                      sizeWidthScreen > 500
+                        ? (
+                          <div className="img-buttons">
+                            <button className="btnPrev" type="button" onClick={ () => {
+                              if (indexImage === 0) {
+                                setIndexImage(images.length - 1)
+                              } else {
+                                setIndexImage(indexImage - 1);
+                              }
+                            } }>❮</button>
+                            { images.length && <img width="600" src={ images[indexImage].image } alt="" /> }
+                            <button className="btnNext" type="button" onClick={ () => {
+                              if (indexImage === images.length - 1) {
+                                setIndexImage(0)
+                              } else {
+                                setIndexImage(indexImage + 1);
+                              }
+                            } }>❯</button>
+                          </div>
+                        ) : (
+                          <div className="img-buttons">
+                            { images.length && <img width="600" src={ images[indexImage].image } alt="" /> }
+                            <div className="container-buttons">
+                              <button className="btnPrev" type="button" onClick={ () => {
+                                if (indexImage === 0) {
+                                  setIndexImage(images.length - 1)
+                                } else {
+                                  setIndexImage(indexImage - 1);
+                                }
+                              } }>❮</button>
+                              <button className="btnNext" type="button" onClick={ () => {
+                                if (indexImage === images.length - 1) {
+                                  setIndexImage(0)
+                                } else {
+                                  setIndexImage(indexImage + 1);
+                                }
+                            } }>❯</button>
+                            </div>
+                          </div>
+                        )
+                    }
                     <div className="container-div-all-img">
                       {
                         images.map((img, i) => (
                           img.image === images[indexImage].image
                             ? <div className="div-all-img"><img className="all-img selected-img" width="130" key={ i } src={ img.image } alt="" /></div>
-                            : <div className="div-all-img"><img className="all-img" width="100" key={ i } src={ img.image } alt="" /></div>
+                            : <div className="div-all-img"><img  id={ i } onClick={ handleClickImage } className="all-img" width="100" key={ i } src={ img.image } alt="" /></div>
                         ))
                       }
                     </div>
