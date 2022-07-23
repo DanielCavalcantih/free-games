@@ -16,7 +16,7 @@ function Home({ history }) {
         <ul className="game-list">
           { gamesList && selectedCategory === 'All'
             ? newGameList.map((game, i) => (
-                i <= 50
+                i <= 70
                   ? (
                     <li key={ game.id }>
                       { favoriteGames.includes(game)
@@ -28,7 +28,7 @@ function Home({ history }) {
               )
             ) : newGameList.filter(game => game.genre === selectedCategory)
               .map((g, i) => (
-                i <= 50
+                i <= 70
                   ? (
                     <li key={ g.id }>
                       <GameCard gameId={ g.id } cardType="normal" title={ g.title } img={ g.thumbnail } category={ g.genre } />
