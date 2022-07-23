@@ -41,7 +41,7 @@ function ProfileCard() {
           <div className="welcome-profile">
             <div className="container-profile">
               <div className="my-account">
-                <h2 className="h2-my-account">My account</h2>
+                <h2 className="h2-my-account">My Profile</h2>
                 <div className="container-inputs">
                   <label htmlFor="username">
                     <div className="label-input"><span>Username: </span></div>
@@ -87,7 +87,7 @@ function ProfileCard() {
           <div className="welcome-profile">
             <div className="container-profile">
               <div className="my-account">
-                <h2 className="h2-my-account">My account</h2>
+                <h2 className="h2-my-account">Edit Profile</h2>
                 <div className="container-inputs">
                   <label htmlFor="username">
                     <div className="label-input"><span>Username: </span></div>
@@ -109,6 +109,11 @@ function ProfileCard() {
                 <Link className="link-edit" to="/profile">
                   <button onClick={ handleClick } className="edit-profile" type="button">
                     Save
+                  </button>
+                </Link>
+                <Link className="link-edit" to="/profile">
+                  <button className="edit-profile cancel" type="button">
+                    Cancel
                   </button>
                 </Link>
               </div>

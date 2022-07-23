@@ -32,20 +32,20 @@ function Header({ location }) {
            : <img onClick={ handleClickLogo } className="just-FF" width="40" src={ logoFF } alt="" />
         }
       </Link>
-      <form>
         {
           location === 'home'
             ? (
-              <div className="container-input-button">
-                <input className="input-search" placeholder="Look for a game" id="searchGame" value={ search } type="text" onChange={ ({ target }) => setSearch(target.value) } />
-                <button className="btn-search" type="submit" onClick={ handleClick }>
-                  <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
-                </button>
-              </div>
+              <form>
+                <div className="container-input-button">
+                  <input className="input-search" placeholder="Look for a game" id="searchGame" value={ search } type="text" onChange={ ({ target }) => setSearch(target.value) } />
+                  <button className="btn-search" type="submit" onClick={ handleClick }>
+                    <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
+                  </button>
+                </div>
+              </form>
             )
-            : <div></div>
+            : null
         }
-      </form>
       <div>
           {
             sizeWidthScreen > 500

@@ -132,6 +132,12 @@ input[type="checkbox"]:checked + label::after {
     overflow: hidden;
   }
 
+  .card-game:hover {
+    box-shadow: 0 0 20px 1px rgb(44, 44, 44);
+    transform: none;
+    z-index: 1;
+  }
+
   .name-genre {
     align-items: flex-start;
   }
