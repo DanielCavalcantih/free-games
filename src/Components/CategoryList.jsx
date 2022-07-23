@@ -3,6 +3,7 @@ import categoryArray from '../services/categoryList';
 import Context from '../context/freeGameContext';
 import '../styles/categories.css';
 import { Link } from 'react-router-dom';
+import threeLines from '../images/threeLines.png';
 
 function CategoryList({ listType }) {
   const { setSelectedCategory, setSelectedFavCategory, setNewGameList, gamesList } = useContext(Context)
@@ -35,7 +36,7 @@ function CategoryList({ listType }) {
           ) : (
             <div className="category-container">
               <button onClick={ () => setIsHidden(!isHidden) } className="button-categories">
-                <img width="25" src="https://cdn-icons-png.flaticon.com/512/56/56763.png" alt="" />
+                <img width="25" src={ threeLines } alt="" />
               </button>
               <div className="all-categories" hidden={ isHidden }>
                 { categoryArray.map(category => (
