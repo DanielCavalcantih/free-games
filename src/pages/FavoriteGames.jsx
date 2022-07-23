@@ -17,7 +17,7 @@ function FavoriteGames() {
           {favoriteGames.length
             ? ( favoriteGames && selectedFavCategory === 'All'
               ? favoriteGames.map((game, i) => (
-                i <= 70
+                i <= 50
                   ? (
                     <li className="item-card" key={ game.id }>
                       <GameCard gameId={ game.id } cardType="favorite" title={ game.title } img={ game.thumbnail } category={ game.genre } />
@@ -25,7 +25,7 @@ function FavoriteGames() {
                   ) : null
               )) : favoriteGames.filter(game => game.genre === selectedFavCategory)
                 .map((g, i) => (
-                  i <= 70
+                  i <= 50
                     ? (
                       <li key={ g.id }>
                         <GameCard gameId={ g.id } cardType="favorite" title={ g.title } img={ g.thumbnail } category={ g.genre } />
