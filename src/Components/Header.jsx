@@ -6,22 +6,8 @@ import logo from '../images/ffgamesBranco.png';
 import logoFF from '../images/justFF.png';
 
 function Header({ location }) {
-  const { search, setSearch, gamesList, setNewGameList,defaultGameList, favoriteGames, setSelectedCategory } = useContext(Context);
+  const { search, setSearch, favoriteGames, handleClickLogo, handleClickHeader } = useContext(Context);
   const sizeWidthScreen = global.screen.width;
-
-  const handleClick = e => {
-    e.preventDefault();
-    const newArray = [...gamesList]
-    search.length > 0
-      ? setNewGameList(newArray.filter((game) => game.title.toLowerCase().includes(search.toLocaleLowerCase())))
-      : setNewGameList(gamesList)
-    setSearch('')
-  }
-
-  const handleClickLogo = () => {
-    setNewGameList(defaultGameList);
-    setSelectedCategory('All');
-  }
 
   return (
     <header className="header">
@@ -38,7 +24,7 @@ function Header({ location }) {
               <form>
                 <div className="container-input-button">
                   <input className="input-search" placeholder="Look for a game" id="searchGame" value={ search } type="text" onChange={ ({ target }) => setSearch(target.value) } />
-                  <button className="btn-search" type="submit" onClick={ handleClick }>
+                  <button className="btn-search" type="submit" onClick={ handleClickHeader }>
                     <img width="20" src="https://cdn-icons-png.flaticon.com/512/1617/1617460.png" alt="" />
                   </button>
                 </div>

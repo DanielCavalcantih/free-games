@@ -9,11 +9,11 @@ import FreeGameProvider from './context/FreeGameProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FreeGameProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <FreeGameProvider>
         <App />
-      </BrowserRouter>
-    </FreeGameProvider>
+      </FreeGameProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

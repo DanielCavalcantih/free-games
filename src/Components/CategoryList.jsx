@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import categoryArray from '../services/categoryList';
 import Context from '../context/freeGameContext';
 import '../styles/categories.css';
@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 import threeLines from '../images/threeLines.png';
 
 function CategoryList({ listType }) {
-  const { setSelectedCategory, setSelectedFavCategory, setNewGameList, gamesList } = useContext(Context)
-  const [isHidden, setIsHidden] = useState(true);
+  const { isHidden, setIsHidden, setNewGameList, gamesList, setSelectedCategory, setSelectedFavCategory } = useContext(Context)
   const sizeWidthScreen = global.screen.width;
-
   const user = JSON.parse(localStorage.getItem('infoUser'));
 
   const handleClick = ({ target }) => {

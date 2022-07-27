@@ -1,9 +1,10 @@
 import Context from "./freeGameContext";
 import { useEffect, useState } from "react";
 import { fetchFreeGames } from "../services/fetchApi";
+import  { useNavigate } from 'react-router-dom';
 
 function FreeGameProvider({ children }) {
-  const [state, setState] = useState({ userName: '', userEmail: ''});
+  const [state, setState] = useState({ user: '', email: '', password: '' });
   const [gamesList, setGamesList] = useState([]);
   const [newGameList, setNewGameList] = useState([]);
   const [favoriteGames, setFavoriteGames] = useState([]);
@@ -11,6 +12,8 @@ function FreeGameProvider({ children }) {
   const [selectedFavCategory, setSelectedFavCategory] = useState('All');
   const [defaultGameList, setDefaultGameList] = useState([]);
   const [search, setSearch] = useState('');
+  const [isHidden, setIsHidden] = useState(true);
+  const history = useNavigate();
 
   const handleChangeFavorite = ({ target }) => {
     target.checked
@@ -25,7 +28,6 @@ function FreeGameProvider({ children }) {
       setNewGameList(allGames);
       setDefaultGameList(allGames);
     };
-
     getGames();
   }, [])
 
@@ -33,9 +35,44 @@ function FreeGameProvider({ children }) {
     setState({ userName: user, userEmail: email });
   }
 
+  const handleClickLogin = e => {
+    e.preventDefault();
+    addUser(state.user, state.email);
+    localStorage.setItem('infoUser', JSON.stringify({
+      userName: state.user,
+      userEmail: state.email,
+      userNumber: 'No number',
+      profileImg: '',
+    }))
+    history('/home');
+  }
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  const handleChangeLogin = ({ target }) => {
+    const { value } = target;
+    setState({ ...state, [target.name]: value })
+  }
+
+  const handleClickLogo = () => {
+    setNewGameList(defaultGameList);
+    setSelectedCategory('All');
+  }
+
+  const handleClickHeader = e => {
+    e.preventDefault();
+    const newArray = [...gamesList]
+    search.length > 0
+      ? setNewGameList(newArray.filter((game) => game.title.toLowerCase().includes(search.toLocaleLowerCase())))
+      : setNewGameList(gamesList)
+    setSearch('')
+  }
+
   const valueProvider = {
-    userName: state.userName,
-    userEmail: state.userEmail,
+    state,
     gamesList,
     setGamesList,
     newGameList,
@@ -51,6 +88,13 @@ function FreeGameProvider({ children }) {
     setFavoriteGames,
     handleChangeFavorite,
     defaultGameList,
+    handleClickLogin,
+    validateEmail,
+    handleChangeLogin,
+    isHidden,
+    setIsHidden,
+    handleClickLogo,
+    handleClickHeader,
   }
 
   return (
