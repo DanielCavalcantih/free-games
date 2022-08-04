@@ -98,14 +98,14 @@
   }
 
   .category {
-    font-size: 18px;
+    font-size: 15px;
     justify-content: center;
-    padding: 5px 0;
+    padding: 6px 0;
     border: solid 1px black;
   }
 
   .category:first-child {
     border-width: 0 0 1px 0;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
